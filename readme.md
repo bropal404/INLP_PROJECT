@@ -77,7 +77,7 @@ Find everything you need (methodology, how sae used, ablation method, results et
 ```bash
 # Llama full local training run
 python main.py train \
-  --layer 15 --epochs 5 --batch_size 128 --expansion_factor 4 --k 8 \
+  --layer 15 --epochs 5 --batch_size 128 --expansion_factor 8 --k 32 \
   --sae_device cpu --model_device cuda
 
 # Llama feature discovery
