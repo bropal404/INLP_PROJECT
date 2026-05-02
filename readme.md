@@ -15,13 +15,21 @@ Course Project for *Introduction to Natural Language Processing (INLP)*, IIIT Hy
 
 ## Project Overview
 
-![image showing harmoine making her parents forget herself, a meme showing our project making llm forget harry potter](meme.png)
+![image showing harmoine making her parents forget herself, a meme showing our project making llm forget harry potter](pics/meme.png)
 
 This project investigates selective knowledge removal in large language models through mechanistic interpretability techniques. The goal is to remove knowledge associated with the *Harry Potter* domain from a pretrained llama-2-7b-chat model while preserving the model’s general linguistic and reasoning capabilities.
 
 Traditional approaches to model editing rely on gradient-based fine-tuning or parameter modification, which may introduce unintended side effects or degrade general performance. In contrast, this work employs **Sparse Autoencoders (SAEs)** trained on internal transformer activations to identify interpretable features corresponding to specific knowledge domains. By selectively ablating these features during inference, it becomes possible to remove targeted knowledge in a controlled and interpretable manner.
 
 The approach focuses on identifying high-level features in the residual stream of the transformer that are strongly associated with Harry Potter concepts. These features are then suppressed at inference time using forward hooks, allowing the model to generate responses without relying on the removed knowledge.
+
+## Performance on Llama 7-B
+
+The suppression is highly localized to the Harry Potter domain across both model versions. In the v2 Llama model, the HP domain shift (−0.82) is approximately 8× greater than the Fantasy domain shift (−0.25) and 27× greater than the Magic shift (−0.10), with Real World facts virtually unchanged (−0.03).
+
+![Performace Chart](pics/image.png)
+![Performance bar graph](pics/image-1.png)
+
 
 ---
 
